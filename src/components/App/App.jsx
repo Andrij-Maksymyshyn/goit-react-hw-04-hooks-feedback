@@ -34,9 +34,8 @@ const App = () => {
 
   const countTotalFeedback = good + neutral + bad;
 
-  const countPositiveFeedbackPercentage = Math.round(
-    (good / countTotalFeedback) * 100,
-  );
+  const countPositiveFeedbackPercentage = () =>
+    Math.round((good / countTotalFeedback) * 100);
 
   return (
     <Container>
@@ -56,7 +55,7 @@ const App = () => {
             neutral={neutral}
             bad={bad}
             total={countTotalFeedback}
-            positivePercentage={countPositiveFeedbackPercentage}
+            positivePercentage={countPositiveFeedbackPercentage()}
           />
         </Section>
       )}
